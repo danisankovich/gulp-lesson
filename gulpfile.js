@@ -47,7 +47,7 @@ gulp.task('coffee', function() {
   .pipe(notify({ message: 'Coffee compilation task complete' }));
 });
 
-gulp.task('build', ["deldist", "coffee", "styles"], function() {
+gulp.task('js', function() {
   gulp.src("src/*.coffee")
   .pipe(coffee())
   .pipe(addsrc("src/*.js"))
@@ -56,6 +56,8 @@ gulp.task('build', ["deldist", "coffee", "styles"], function() {
   .pipe(gulp.dest("dist"))//sends that bundle to a destination
   .pipe(notify({ message: 'Build task complete' }));
 });
+
+gulp.task('build', ["deldist", "coffee", "js", "styles"]);
 
 gulp.task('watch', function() {
   gulp.watch("src/*", ['build']);

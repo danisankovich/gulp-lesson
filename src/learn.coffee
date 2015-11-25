@@ -1,3 +1,3 @@
 greet = ->
-  console.log "hello CS"
+  console.log "hello CS here too";
 greet()
