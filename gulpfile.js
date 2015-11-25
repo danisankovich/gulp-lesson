@@ -57,7 +57,7 @@ gulp.task('js', function() {
   .pipe(notify({ message: 'Build task complete' }));
 });
 
-gulp.task('build', ["deldist", "coffee", "js", "styles"]);
+gulp.task('build', ["deldist", "coffee", "js",  "styles"]);
 
 gulp.task('watch', function() {
   gulp.watch("src/*", ['build']);
